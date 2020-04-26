@@ -4,6 +4,8 @@ import "./App.css";
 import Tabela from "./Tabela";
 import Form from "./Formulario";
 import Header from "./Header";
+import Button from "./Button";
+import Container from "./Container";
 
 class App extends Component {
   state = {
@@ -43,7 +45,7 @@ class App extends Component {
   };
 
   handleSubmit = (autor) => {
-    const {nome, livro, preco} = autor;
+    const { nome, livro, preco } = autor;
 
     if (!nome || !livro || !preco) {
       return;
@@ -65,6 +67,11 @@ class App extends Component {
 
           <Form handleSubmit={this.handleSubmit} />
         </div>
+
+        <Container>
+          <Button>Normal Button</Button>
+          <Button primary>Primary Button</Button>
+        </Container>
       </Fragment>
     );
   }
