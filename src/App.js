@@ -60,6 +60,8 @@ class App extends Component {
         <Header />
 
         <div className='container mb-10'>
+          <h1>Casa do Código</h1>
+
           <Tabela
             autores={this.state.autores}
             removerAutor={this.removerAutor}
