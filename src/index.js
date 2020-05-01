@@ -1,19 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Home from './pages/home/Home';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Sobre from './Sobre';
-import Livros from './Livros';
-import Autores from './Autores';
-import NotFound from './NotFound';
+import Sobre from './pages/sobre/Sobre';
+import Livros from './pages/livros/Livros';
+import Autores from './pages/autores/Autores';
+import NotFound from './pages/not-found/NotFound';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Switch>
-        <Route path='/' exact={true} component={App} />
+        <Route path='/' exact={true} component={Home} />
 
         <Route path='/sobre' component={Sobre} />
 

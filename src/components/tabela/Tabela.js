@@ -16,14 +16,14 @@ const TableHead = () => {
 const TableBody = (props) => {
   const { autores, removerAutor } = props;
 
-  const linhas = autores.map((autor, index) => (
-    <tr key={index}>
+  const linhas = autores.map((autor) => (
+    <tr key={autor.id}>
       <td>{autor.nome}</td>
       <td>{autor.livro}</td>
       <td>{autor.preco}</td>
       <td>
         <button
-          onClick={() => removerAutor(index)}
+          onClick={() => removerAutor(autor.id)}
           className="waves-effect waves-light indigo lighten-2 btn"
         >
           Remover
