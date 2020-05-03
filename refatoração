@@ -1,0 +1,35 @@
+
+
+[ INICIANDO COMMIT ]
+
+
+On branch react-3
+Your branch is up to date with 'origin/react-3'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    src/components/button/Button.js
+	deleted:    src/components/container/Container.js
+	deleted:    src/components/data-table/DataTable.js
+	deleted:    src/components/formulario/Formulario.js
+	deleted:    src/components/header/Header.js
+	deleted:    src/components/link-wrapper/LinkWrapper.js
+	deleted:    src/components/tabela/Tabela.js
+	modified:   src/pages/autores/Autores.js
+	modified:   src/pages/home/Home.js
+	modified:   src/pages/livros/Livros.js
+	modified:   src/pages/not-found/NotFound.js
+	modified:   src/pages/sobre/Sobre.js
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	"refatora\303\247\303\243o"
+	src/components/Button/
+	src/components/Container/
+	src/components/Formulario/
+	src/components/Header/
+	src/components/LinkWrapper/
+	src/components/Tabela/
+
+no changes added to commit (use "git add" and/or "git commit -a")

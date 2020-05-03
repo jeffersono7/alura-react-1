@@ -1,8 +1,8 @@
 import React, { Fragment, Component } from 'react';
-import Header from '../../components/header/Header';
-import DataTable from '../../components/data-table/DataTable';
+import Header from '../../components/Header/Header';
 import ApiService from '../../utils/ApiService';
 import PopUp from '../../utils/PopUp';
+import Tabela from '../../components/Tabela/Tabela';
 
 class Livros extends Component {
   constructor(props) {
@@ -10,7 +10,6 @@ class Livros extends Component {
 
     this.state = {
       livros: [],
-      titulo: 'Livros',
     };
   }
 
@@ -27,6 +26,8 @@ class Livros extends Component {
   }
 
   render() {
+    const campos = [{ titulo: 'Livros', dado: 'livro' }];
+
     return (
       <Fragment>
         <Header />
@@ -34,10 +35,9 @@ class Livros extends Component {
         <div className='container'>
           <h1>Livros</h1>
 
-          <DataTable
+          <Tabela
             dados={this.state.livros}
-            titulo={this.state.titulo}
-            colunas={['livro']}
+            campos={campos}
           />
         </div>
       </Fragment>

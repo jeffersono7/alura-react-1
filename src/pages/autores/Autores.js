@@ -1,8 +1,8 @@
 import React, { Fragment, Component } from 'react';
-import Header from '../../components/header/Header';
-import DataTable from '../../components/data-table/DataTable';
+import Header from '../../components/Header/Header';
 import ApiService from '../../utils/ApiService';
 import PopUp from '../../utils/PopUp';
+import Tabela from '../../components/Tabela/Tabela';
 
 class Autores extends Component {
   constructor(props) {
@@ -10,7 +10,6 @@ class Autores extends Component {
 
     this.state = {
       nomes: [],
-      titulo: 'Autores',
     };
   }
 
@@ -25,6 +24,8 @@ class Autores extends Component {
   }
 
   render() {
+    const campos = [{ titulo: 'Autores', dado: 'nome' }];
+
     return (
       <Fragment>
         <Header />
@@ -32,10 +33,9 @@ class Autores extends Component {
         <div className='container'>
           <h1>Autores</h1>
 
-          <DataTable
+          <Tabela
             dados={this.state.nomes}
-            titulo={this.state.titulo}
-            colunas={['nome']}
+            campos={campos}
           />
         </div>
       </Fragment>

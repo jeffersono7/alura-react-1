@@ -2,11 +2,11 @@ import React, { Component, Fragment } from 'react';
 import 'materialize-css/dist/css/materialize.min.css';
 import 'materialize-css/dist/js/materialize';
 import './Home.css';
-import Tabela from '../../components/tabela/Tabela';
-import Form from '../../components/formulario/Formulario';
-import Header from '../../components/header/Header';
-import Button from '../../components/button/Button';
-import Container from '../../components/container/Container';
+import Tabela from '../../components/Tabela/Tabela';
+import Form from '../../components/Formulario/Formulario';
+import Header from '../../components/Header/Header';
+import Button from '../../components/Button/Button';
+import Container from '../../components/Container/Container';
 import PopUp from '../../utils/PopUp';
 import ApiService from '../../utils/ApiService';
 
@@ -60,6 +60,12 @@ class Home extends Component {
   };
 
   render() {
+    const campos = [
+      { titulo: 'Autores', dado: 'nome' },
+      { titulo: 'Livros', dado: 'livro' },
+      { titulo: 'Preços', dado: 'preco' },
+    ];
+
     return (
       <Fragment>
         <Header />
@@ -68,8 +74,9 @@ class Home extends Component {
           <h1>Casa do Código</h1>
 
           <Tabela
-            autores={this.state.autores}
-            removerAutor={this.removerAutor}
+            dados={this.state.autores}
+            removerDado={this.removerAutor}
+            campos={campos}
           />
 
           <Form handleSubmit={this.handleSubmit} />
