@@ -1,41 +1,36 @@
+const urlBase = 'http://localhost:8000/api/autor';
+
+const consomeApi = (resource = '', method = 'get', body) => {
+  return fetch(`${urlBase}/${resource}`, {
+    method,
+    headers: {
+      'content-type': 'application/json',
+    },
+    body
+  })
+    .then(ApiService.tratarErros)
+    .then((res) => res.json());
+};
+
 const ApiService = {
   listarAutores: function () {
-    return fetch('http://localhost:8000/api/autor')
-      .then(this.tratarErros)
-      .then((r) => r.json());
+    return consomeApi();
   },
 
   criarAutor: function (autor) {
-    return fetch('http://localhost:8000/api/autor', {
-      method: 'post',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: autor,
-    })
-      .then(this.tratarErros)
-      .then((r) => r.json());
+    return consomeApi('', 'post', autor);
   },
 
   listarNomes: function () {
-    return fetch('http://localhost:8000/api/autor/nome')
-      .then(this.tratarErros)
-      .then((r) => r.json());
+    return consomeApi('nome');
   },
 
   listarLivros: function () {
-    return fetch('http://localhost:8000/api/autor/livro')
-      .then(this.tratarErros)
-      .then((r) => r.json());
+    return consomeApi('livro');
   },
 
   removerAutor: function (id) {
-    return fetch(`http://localhost:8000/api/autor/${id}`, {
-      method: 'delete',
-      headers: { 'content-type': 'application/json' },
-    })
-      .then(this.tratarErros)
-      .then((r) => r.json());
+    return consomeApi(id, 'delete');
   },
 
   tratarErros: function (res) {

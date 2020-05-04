@@ -45,8 +45,8 @@ class Home extends Component {
       .catch((err) => PopUp.exibeMensagem('error', 'Erro ao deletar autor!'));
   };
 
-  handleSubmit = (autor) => {
-    ApiService.criarAutor(JSON.stringify(autor))
+  handleSubmit = ({ nome, livro, preco }) => {
+    ApiService.criarAutor(JSON.stringify({ nome, livro, preco }))
       .then((res) => {
         if (res.message === 'success') {
           this.setState((state) => ({ autores: [...state.autores, res.data] }));
@@ -73,13 +73,13 @@ class Home extends Component {
         <div className='container mb-10'>
           <h1>Casa do Código</h1>
 
+          <Form handleSubmit={this.handleSubmit} />
+
           <Tabela
             dados={this.state.autores}
             removerDado={this.removerAutor}
             campos={campos}
           />
-
-          <Form handleSubmit={this.handleSubmit} />
         </div>
 
         <Container>
